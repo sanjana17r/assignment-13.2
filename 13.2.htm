@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="info">getInfo</button><!--button is created-->
+    <script>
+        document.getElementById('info').addEventListener('click',getinfo);//this button when clicked, calls the function getinfo
+        function getinfo(){//getinfo function is created which fetches data from the url 
+            return fetch('https://api.github.com/users/sanjana')
+           .then((Response)=>Response.json())//data is in the form of json file
+           .then((data)=>{
+            console.log(data)//data is console logged, on calling the function
+           })
+           };
+        
+    </script>
+</body>
+</html>
